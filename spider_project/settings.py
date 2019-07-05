@@ -64,9 +64,13 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'spider_project.pipelines.SpiderProjectPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'spider_project.pipelines.PicRenamePipeline': 1,
+}
+# 图片存储路径
+IMAGES_STORE = 'images'
+# 根据item中字段来设置哪个字段内容需要被下载
+IMAGES_URLS_FIELD = 'img_url'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
